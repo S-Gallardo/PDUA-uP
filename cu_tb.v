@@ -47,59 +47,71 @@ module cu_tb();
 		N_tb			= 1'b0;
 		P_tb			= 1'b0;
 		Z_tb 			= 1'b0;
-		opcode_tb	= 5'b00000;
+		opcode_tb	= 5'b00000; //FETCH
 		#25
 		rst_tb		= 1'b0;
 		#275
-		opcode_tb	= 5'b00001;
+		opcode_tb	= 5'b00001; //MOV ACC A
 		#100
-		opcode_tb	= 5'b00010;
+		opcode_tb	= 5'b00010; //MOV A ACC
 		#100
-		opcode_tb	= 5'b00011;
+		opcode_tb	= 5'b00011; //MOV ACC CTE
 		#300
-		opcode_tb	= 5'b00100;
+		opcode_tb	= 5'b00100; //MOV ACC [DPTR]
 		#300
-		opcode_tb	= 5'b00101;
+		opcode_tb	= 5'b00101; //MOV DPTR ACC
 		#100
-		opcode_tb	= 5'b00110;
+		opcode_tb	= 5'b00110; //MOV [DPTR] ACC
 		#300
-		opcode_tb	= 5'b00111;
+		opcode_tb	= 5'b00111; //INV ACC
 		#100
-		opcode_tb	= 5'b01000;
+		opcode_tb	= 5'b01000; //AND ACC A
 		#100
-		opcode_tb	= 5'b01001;
+		opcode_tb	= 5'b01001; //ADD ACC A
 		#100
-		opcode_tb	= 5'b01010;
+		opcode_tb	= 5'b01010; //JMP CTE
 		#300
-		opcode_tb	= 5'b01011;
-		#400
-		opcode_tb	= 5'b01100;
-		#400
-		opcode_tb	= 5'b01101;
-		#400
-		opcode_tb	= 5'b01110;
+		opcode_tb	= 5'b01011; //JZ CTE Z=0
+		#200
+		Z_tb			= 1'b1;
+		opcode_tb	= 5'b01011; //JZ CTE Z=1
+		#300
+		Z_tb			= 1'b0;
+		opcode_tb	= 5'b01100; //JN CTE N=0
+		#200
+		N_tb			= 1'b1;
+		opcode_tb	= 5'b01100; //JN CTE N=1
+		#300
+		N_tb			= 1'b0;
+		opcode_tb	= 5'b01101; //JC CTE C=0
+		#200
+		C_tb			= 1'b1;
+		opcode_tb	= 5'b01101; //JC CTE C=1
+		#300
+		C_tb			= 1'b0;
+		opcode_tb	= 5'b01110; //CALL DIR
 		#800
-		opcode_tb	= 5'b01111;
+		opcode_tb	= 5'b01111; //RET
 		#300
-		opcode_tb	= 5'b10000;
+		opcode_tb	= 5'b10000; //MOV ACC [DIR]
 		#500
-		opcode_tb	= 5'b10001;
+		opcode_tb	= 5'b10001; //MOV DPTR CTE
 		#300
-		opcode_tb	= 5'b10010;
+		opcode_tb	= 5'b10010; //AND ACC CTE
 		#400
-		opcode_tb	= 5'b10011;
+		opcode_tb	= 5'b10011; //OR ACC A
 		#100
-		opcode_tb	= 5'b10100;
+		opcode_tb	= 5'b10100; //XOR ACC A
 		#100
-		opcode_tb	= 5'b10101;
+		opcode_tb	= 5'b10101; //CA2 ACC
 		#100
-		opcode_tb	= 5'b10110;
+		opcode_tb	= 5'b10110; //CA2 A
 		#100
-		opcode_tb	= 5'b10111;
+		opcode_tb	= 5'b10111; //SLR ACC
 		#100
-		opcode_tb	= 5'b11000;
+		opcode_tb	= 5'b11000; //SLL ACC
 		#100
-		opcode_tb	= 5'b11001;
+		opcode_tb	= 5'b11001; //INC ACC
 		#100
 		
 		//Stop simulation
